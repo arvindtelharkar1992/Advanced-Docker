@@ -45,7 +45,7 @@ Now you can open the redis-cli on the first instance where the redis-server is r
 
 This should give "arvind" as the output
 
-
+## 3. Blue Green Deployment
 
 
 
