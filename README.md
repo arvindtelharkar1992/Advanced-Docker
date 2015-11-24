@@ -48,7 +48,7 @@ This should give "arvind" as the output
 ## 3. Blue Green Deployment
 
 In addition to the deployment workshop, a post-receive hook has been added for green.git and blue.git for deploying the 
-dockerized node.js app given. The post-receive hook will then appropriately build the image from the Dockerfile, push to the local registery, pull from registery , stop and restart the App. The changes made and pushed to the green or blue slice can be checked using curl command. Note that forever also needs to be installed globally to complete this process..
+dockerized node.js app given. The post-receive hook will be placed under /deploy/blue.git(or green.git)/hooks folder. The post-receive hook will then appropriately build the image from the Dockerfile, push to the local registery, pull from registery , stop and restart the App. The changes made and pushed to the green or blue slice can be checked using curl command. Note that forever also needs to be installed globally to complete this process..
 In short, the steps can be summarized as follows:
 - Make a commit to the App folder
 - push the change either to green or blue.
