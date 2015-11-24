@@ -8,7 +8,7 @@ docker build -t image1 .
 docker run -idt --name container1 image1
 ```
 The first container creates a new file called myfile.txt and echoes some content to it. The contents of the file have been 
-exposed using socat on port 9001(as instrcuted).
+exposed using socat on port 9001(as instructed).
 
 The following are the commands for spinning up container2:
 ```
@@ -16,6 +16,7 @@ docker build -t image2 .
 docker run -it --link container1:aliascontainer --name container2 image2
 ```
 Note that image1 and image2 here are the names of the images and not the folders(as here)
+container2 links to container1 and does a simple curl for reading the contents of the file myfile.txt on port 9001.
 After running container2, the message 'Hello message from arvind' should be visible
 
 ## 2. Ambassador Pattern
