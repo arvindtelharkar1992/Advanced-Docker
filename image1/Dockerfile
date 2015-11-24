@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER adtelhar@ncsu.edu
 
-# Create file and write to it
+# Create a new file myfile.txt and echo some content or message to it
 RUN touch myfile.txt && echo 'Hello message from arvind' > myfile.txt
 
 # Update the system and install socat
