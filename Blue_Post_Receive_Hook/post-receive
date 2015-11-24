@@ -1,10 +1,10 @@
 #!/bin/sh
-NPM=/usr/bin/npm
-PATH=/root/deploy/blue-www/
-GIT_WORK_TREE=/root/deploy/blue-www/ /usr/bin/git checkout -f
-cd $PATH
-$NPM install
-
+BLUE_PATH=/root/deploy/blue-www/
+NPM_PATH=/usr/bin/npm
+GIT_PATH=/usr/bin/git
+GIT_WORK_TREE=/root/deploy/blue-www/ $GIT_PATH checkout -f
+cd $BLUE_PATH
+$NPM_PATH install
 APP_PATH=/root/App
 DOCKER=/usr/bin/docker
 #Remove existing container if it exists
@@ -15,7 +15,7 @@ $DOCKER rmi ncsu-app
 $DOCKER build -t ncsu-app .
 $DOCKER run -p 50200:8080 -d --name app ncsu-app
 $DOCKER logs app
-
+#Pull from registery
 $DOCKER pull localhost:5000/ncsu:latest
 $DOCKER stop app
 $DOCKER rm app
