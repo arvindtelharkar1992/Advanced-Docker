@@ -58,8 +58,8 @@ nodejs infrastructure.js
 ```
 - Run 
 ```
-curl:localhost:5060
-curl:localhost:9090
+curl localhost:5060
+curl localhost:9090
 ```
 Running the above commands should show the output from the green and the blue slices
 
