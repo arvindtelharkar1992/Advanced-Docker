@@ -17,7 +17,10 @@ After running container2, the message 'Hello message from arvind' should be visi
 
 ## 2. Ambassador Pattern
 Two Digital Ocean Droplets(remote instances) have been used for this purpose. One of the instances has the docker-compose file under AmbassadorServer while the other has the docker-compose file under AmbassadorClient.
-
+The Structure of the client and the server is as follows:
+Server: There is a redis server and a redisAmbassador which are linked to each other.
+Client: There is a redis client and a redisAmbassador which are also linked to each other.
+Additionally, both the redisAmbassadors are linked to each other for which the IP address and port of one of the instances has been specified while creating the link.
 
 
 
