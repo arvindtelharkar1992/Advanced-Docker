@@ -22,6 +22,30 @@ Server: There is a redis server and a redisAmbassador which are linked to each o
 Client: There is a redis client and a redisAmbassador which are also linked to each other.
 Additionally, both the redisAmbassadors are linked to each other for which the IP address and port of one of the instances has been specified while creating the link.
 
+Note: Please ensure that docker-compose is installed on both the instances.
+
+For running the server, the following command needs to be executed:
+```
+docker-compose up
+```
+Running the above command will start the redis server on port 6379 of the first instance.
+
+Now login to the second instance and run the following command to run the client:
+```
+docker-compose run myRedisClient
+```
+This will give a redis prompt from where you can set/get keys such as
+```
+>set mykey arvind
+```
+Now you can open the redis-cli on the first instance where the redis-server is running and 'get' the value
+```
+>get mykey
+```
+
+This should give "arvind" as the output
+
+
 
 
 
