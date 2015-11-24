@@ -12,9 +12,11 @@ The following are the commands for spinning up container2:
 docker build -t image2 .
 docker run -it --link container1:aliascontainer --name container2 image2
 ```
+Note that image1 and image2 here are the names of the images and not the folders(as here)
 After running container2, the message 'Hello message from arvind' should be visible
 
 ## 2. Ambassador Pattern
+
 
 
 
