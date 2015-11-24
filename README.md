@@ -47,6 +47,9 @@ This should give "arvind" as the output
 
 ## 3. Blue Green Deployment
 
+In addition to the deployment workshop, a post-receive hook has been added for gree.git and blue.git for deploying the 
+dockerized node.js app given. The post-receive hook will then appropriately build the image from the Dockerfile, push to the local registery, pull from registery , stop and restart the App.
+
 
 
 [ScreenCast:Advanced Docker](https://www.youtube.com/watch?v=2m7GGcp5Aug)
