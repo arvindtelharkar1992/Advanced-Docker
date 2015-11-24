@@ -50,11 +50,11 @@ This should give "arvind" as the output
 In addition to the deployment workshop, a post-receive hook has been added for green.git and blue.git for deploying the 
 dockerized node.js app given. The post-receive hook will then appropriately build the image from the Dockerfile, push to the local registery, pull from registery , stop and restart the App. The changes made and pushed to the green or blue slice can be checked using curl command. Note that forever also needs to be installed globally to complete this process..
 In short, the steps can be summarized as follows:
-1. Make a commit to the App folder
-2. push the change either to green or blue.
-3. keep running the infrastructure file using
-
-```nodejs infrastructure.js
+- Make a commit to the App folder
+- push the change either to green or blue.
+- Keep running the infrastructure file using
+```
+nodejs infrastructure.js
 ```
 
 
