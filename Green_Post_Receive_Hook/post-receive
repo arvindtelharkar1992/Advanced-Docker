@@ -1,0 +1,28 @@
+#!/bin/sh
+NPM=/usr/bin/npm
+PATH=/root/deploy/green-www/
+GIT_WORK_TREE=/root/deploy/green-www/ /usr/bin/git checkout -f
+cd $PATH
+$NPM install
+
+APP_PATH=/root/App
+DOCKER=/usr/bin/docker
+#Remove existing container if it exists
+$DOCKER rm -f app
+#Now remove the image
+$DOCKER rmi ncsu-app
+#Build the image from the Dockerfile
+$DOCKER build -t ncsu-app .
+#Tag the image
+$DOCKER tag -f ncsu-app localhost:5000/ncsu:latest
+#push to the registery
+$DOCKER push localhost:5000/ncsu:latest
+$DOCKER run -p 50100:8080 -d --name app ncsu-app
+$DOCKER logs app
+
+$DOCKER pull localhost:5000/ncsu:latest
+$DOCKER stop app
+$DOCKER rm app
+$DOCKER rmi localhost:5000/ncsu:current
+$DOCKER tag localhost:5000/ncsu:latest localhost:5000/ncsu:current
+$DOCKER run -p 50100:8080 -d --name app localhost:5000/ncsu:latest
