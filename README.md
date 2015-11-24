@@ -16,7 +16,7 @@ Note that image1 and image2 here are the names of the images and not the folders
 After running container2, the message 'Hello message from arvind' should be visible
 
 ## 2. Ambassador Pattern
-
+Two Digital Ocean Droplets(remote instances) have been used for this purpose. One of the instances has the docker-compose file under AmbassadorServer while the other has the docker-compose file under AmbassadorClient.
 
 
 
